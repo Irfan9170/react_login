@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import {Route,Switch,Redirect,useHistory} from 'react-router-dom'
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
-import MainHeader from './components/MainHeader/MainHeader';
+// import MainHeader from './components/MainHeader/MainHeader';
 import Jokes from './components/Jokes/Jokes'
 
 function App() {
@@ -34,6 +34,8 @@ function App() {
     <React.Fragment>
       <main>
       {/* <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} /> */}
+     <Switch>
+
      
            <Route path='/' exact >
              <Redirect  to = "/login"/>
@@ -50,6 +52,7 @@ function App() {
        
         
         
+      </Switch>
       </main>
     </React.Fragment>
   );

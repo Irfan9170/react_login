@@ -7,12 +7,16 @@ import classes from './Joke.module.css'
 const Jokes = (props)=>{
    const [jokes,setJokes]=useState([]);
    const [isLoading,setLoading]=useState(false);
-   useEffect(async() => {
-      setLoading(true);
-           const response = await axios.get('https://official-joke-api.appspot.com/jokes/ten');
-                const data = await response.data;
-               setJokes(data)
-      setLoading(false)
+   useEffect(() => {
+      
+      async function fetchData(){
+         setLoading(true);
+         const response = await axios.get('https://official-joke-api.appspot.com/jokes/ten');
+         const data = await response.data;
+        setJokes(data);
+        setLoading(false)
+      }
+       fetchData();    
    }, [])
 
    // console.log(props)
