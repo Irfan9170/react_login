@@ -106,7 +106,7 @@ const Login = (props) => {
             onBlur={validatePasswordHandler}
           />
         </div>
-        {errorPass && <p style={{color:"red"}}>Please Enter alphanumric password minimum 8 characters eg:Testing@123</p>}
+        {errorPass && <p style={{color:"red"}}>Please Enter alphanumric password minimum 8 characters eg:Testing123</p>}
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid} >
             Login
